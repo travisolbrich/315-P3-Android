@@ -17,7 +17,7 @@ Below is a diagram showing the different components of the application. To view 
 
 
 ### Serialization Service
-This service handles loading/saving entities from XML or JSON files. 
+This service handles loading/saving entities from XML or JSON files. Please see the [example XML file](data.xml) for an example of how data will be stored.
 
 ### Bird Entity Service
 The Bird Service entity handles the birds being used by the application.
