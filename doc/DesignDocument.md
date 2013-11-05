@@ -28,6 +28,12 @@ The Bird Map Service entity works on plotting the bird's migration paths onto a 
 ## Low Level Design
 
 
-
-
 ## Benefits, Assumptions, and Risks
+
+### Benefits
+
+Nobody on our team has ever developed for Android before, so this will be a great learning project for us. We have aimed to keep the scope of the project manageable so that we can learn the basics of Android development without getting too concerned with creating a lot of content.
+
+We assume that the user will have an Android 4.x phone or the ability to emulate it.
+
+There are no significant risks to the user of this application. At worst, the user's phone may crash. Data services should not be used.
