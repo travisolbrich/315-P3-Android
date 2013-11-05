@@ -8,6 +8,14 @@ We are developing an application to assist bird watchers and other people intere
 
 ## High Level Entities
 
+## UI Flowchart
+
+Below is a diagram showing the different components of the application. To view a working demo of the application, visit the [fluidUI demo](https://www.fluidui.com/editor/live/preview/p_FyTNToGobErf9M3q2ElTvOFabkCXOkQt.1383625832629).
+
+![UI Flowchart](img/ui-flowchart.png)
+
+
+
 ### Serialization Service
 This service handles loading/saving entities from XML or JSON files.
 
