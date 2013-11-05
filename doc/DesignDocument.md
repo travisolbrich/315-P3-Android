@@ -25,7 +25,7 @@ The Bird Service entity handles the birds being used by the application.
 ### Bird Map Service
 The Bird Map Service entity works on plotting the bird's migration paths onto a given Map.
 
-![High Level Design](high-level-diagram.png)
+![High Level Design](img/high-level-diagram.png)
 
 ## Low Level Design
 
