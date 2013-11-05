@@ -27,6 +27,20 @@ The Bird Map Service entity works on plotting the bird's migration paths onto a 
 
 ## Low Level Design
 
+### Serialization Service
+This service handles loading/saving entities from XML or JSON files. 
+
+### Bird Entities
+
+#### Bird Class
+The bird class keeps track of a bird's picture, description, and path locations.
+
+#### Location Class
+A location that keeps track of latitude, longitude, and path index. The path index will be used for linking locations in the correct order.
+
+### Bird Map Service Classes
+
+#### Bird Path Drawer
 
 ## Benefits, Assumptions, and Risks
 
