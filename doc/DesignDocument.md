@@ -17,13 +17,15 @@ Below is a diagram showing the different components of the application. To view 
 
 
 ### Serialization Service
-This service handles loading/saving entities from XML or JSON files.
+This service handles loading/saving entities from XML or JSON files. 
 
 ### Bird Entity Service
-The Bird Service entity handles the birds being used for the map.
+The Bird Service entity handles the birds being used by the application.
 
 ### Bird Map Service
 The Bird Map Service entity works on plotting the bird's migration paths onto a given Map.
+
+![High Level Design](high-level-diagram.png)
 
 ## Low Level Design
 
