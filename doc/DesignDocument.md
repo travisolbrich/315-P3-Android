@@ -36,11 +36,12 @@ This service handles loading/saving entities from XML or JSON files.
 The bird class keeps track of a bird's picture, description, and path locations.
 
 #### Location Class
-A location that keeps track of latitude, longitude, and path index. The path index will be used for linking locations in the correct order.
+A location that keeps track of latitude, longitude, time, and path index. The path index will be used for linking locations in the correct order.
 
 ### Bird Map Service Classes
 
 #### Bird Path Drawer
+Takes in a single bird and draws their migratory path on the specified map.
 
 ## Benefits, Assumptions, and Risks
 
