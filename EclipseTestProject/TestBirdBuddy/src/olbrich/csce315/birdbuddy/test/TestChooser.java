@@ -27,16 +27,18 @@ public class TestChooser extends ActivityInstrumentationTestCase2<Chooser> {
 	}
 	
 	public void testTappingItemLoadsCorrectInfoScreen() {
-		ListView birdList = (ListView) solo.getView(R.id.birdList);
-		
-		TextView birdItem = (TextView) birdList.getChildAt(0);
-		
+		ListView birdList = (ListView) solo.getView(R.id.birdList);		
+		TextView birdItem = (TextView) birdList.getChildAt(0);		
 		String birdName = birdItem.getText().toString();
 		
+		// Click the first element in the list
 		solo.clickInList(0);
 		
+		// Make sure that we're passed to the BirdInfoViewActivity
 		solo.assertCurrentActivity("test", BirdInfoViewActivity.class);
 		
+		// Make sure the bird info is on the page
+		// TODO: Use something more robust to make sure we're actually on the right page
 		assertTrue(solo.waitForText(birdName));
 	}
 }
