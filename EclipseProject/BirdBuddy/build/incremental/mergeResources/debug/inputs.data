@@ -1,0 +1,25 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1384072875622 6640 ff99b6ab9bcdd280ea1f3c0a44f74b768f85cd05 C:\Users\Travis\workspace\BirdBuddy\res\drawable-xxhdpi\ic_launcher.png
+1384075462706 830 6b9a13f816861355d83903d73d2d4ae3a345aaa2 C:\Users\Travis\workspace\BirdBuddy\res\layout\activity_bird_info_view.xml
+1384075594996 1002 9041525179ae4e0a27c174008b12f485cfa562c9 C:\Users\Travis\workspace\BirdBuddy\res\xml\pref_data_sync.xml
+1384072875836 277 aa41b81abc955d40b2fe1a1af5becee8eeaffae3 C:\Users\Travis\workspace\BirdBuddy\res\values-sw720dp-land\dimens.xml
+1384072875829 220 b215c89b9044bf83c72bb2aa95897bb0dcfc4cd4 C:\Users\Travis\workspace\BirdBuddy\res\values\dimens.xml
+1384072875610 2148 3faeaef7f2b162cf922b6d0b76489b5fc96acb69 C:\Users\Travis\workspace\BirdBuddy\res\drawable-hdpi\ic_launcher.png
+1384072875833 203 5691ab61d395ba80337342127e8c04ddac1150a2 C:\Users\Travis\workspace\BirdBuddy\res\values-sw600dp\dimens.xml
+1384072875578 697 bf1090b7346c9aba3442763ccc2f22266ad113e7 C:\Users\Travis\workspace\BirdBuddy\res\values\styles.xml
+1384111340442 81 785a41f10847ebda6b73c712c086967eab1a6fc8 C:\Users\Travis\workspace\BirdBuddy\res\menu\chooser.xml
+1384072875585 391 82b35720079112abfc099ae92ec4a4f35d190211 C:\Users\Travis\workspace\BirdBuddy\res\values-v14\styles.xml
+1384111550536 1231 03de091515afc7c6a4df6e4e971fedad07267d05 C:\Users\Travis\workspace\BirdBuddy\res\layout\activity_chooser.xml
+1384075595009 686 f28e56dff37b5accfa94c74d5dc05feecd38c4b3 C:\Users\Travis\workspace\BirdBuddy\res\xml\pref_headers.xml
+1384072875582 334 ceb9ef989b118ce51ae27a493f5849d33af00ac8 C:\Users\Travis\workspace\BirdBuddy\res\values-v11\styles.xml
+1384072875606 1398 26434e136688f4d8fac939debced6f36f051acf8 C:\Users\Travis\workspace\BirdBuddy\res\drawable-mdpi\ic_launcher.png
+1384075011233 331 76e11b5e4862bbdd4ef2489395ad1293669e1b9e C:\Users\Travis\workspace\BirdBuddy\res\layout\list_item.xml
+1384075595003 1487 a84d533447bee192e2bec3d5f5ce6c88611703b3 C:\Users\Travis\workspace\BirdBuddy\res\xml\pref_general.xml
+1384075595023 2141 e8135aba8ff006fdc2d1b1a677442195c23f8cb4 C:\Users\Travis\workspace\BirdBuddy\res\values\strings_activity_settings.xml
+1384072875615 3803 d7eebc18e32b8dd1d6a33ced241befe697a6c853 C:\Users\Travis\workspace\BirdBuddy\res\drawable-xhdpi\ic_launcher.png
+1384075133283 307 cb5065e7b215f2febd95b170d7c0880040196694 C:\Users\Travis\workspace\BirdBuddy\res\values\strings.xml
+1384075595015 1341 ba794d8e43d63a40bc969312555e7768a0058323 C:\Users\Travis\workspace\BirdBuddy\res\xml\pref_notification.xml
+1384111348270 81 785a41f10847ebda6b73c712c086967eab1a6fc8 C:\Users\Travis\workspace\BirdBuddy\res\menu\bird_info_view.xml
+1384075000260 562 079ff4c4d86cdb147ed57f49c65a0eb1bb6a9cfe C:\Users\Travis\workspace\BirdBuddy\res\values\list_data.xml

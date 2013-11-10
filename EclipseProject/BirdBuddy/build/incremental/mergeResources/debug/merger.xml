@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="C:\Users\Travis\workspace\BirdBuddy\res" >
+            <file
+                name="ic_launcher"
+                path="C:\Users\Travis\workspace\BirdBuddy\res\drawable-hdpi\ic_launcher.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="C:\Users\Travis\workspace\BirdBuddy\res\drawable-mdpi\ic_launcher.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="C:\Users\Travis\workspace\BirdBuddy\res\drawable-xhdpi\ic_launcher.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="C:\Users\Travis\workspace\BirdBuddy\res\drawable-xxhdpi\ic_launcher.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="activity_bird_info_view"
+                path="C:\Users\Travis\workspace\BirdBuddy\res\layout\activity_bird_info_view.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_chooser"
+                path="C:\Users\Travis\workspace\BirdBuddy\res\layout\activity_chooser.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="list_item"
+                path="C:\Users\Travis\workspace\BirdBuddy\res\layout\list_item.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="bird_info_view"
+                path="C:\Users\Travis\workspace\BirdBuddy\res\menu\bird_info_view.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="chooser"
+                path="C:\Users\Travis\workspace\BirdBuddy\res\menu\chooser.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                path="C:\Users\Travis\workspace\BirdBuddy\res\values\dimens.xml"
+                qualifiers="" >
+                <dimen name="activity_horizontal_margin" >16dp
+                </dimen>
+                <dimen name="activity_vertical_margin" >16dp
+                </dimen>
+            </file>
+            <file
+                path="C:\Users\Travis\workspace\BirdBuddy\res\values\list_data.xml"
+                qualifiers="" >
+                <string-array name="birds" >
+                    <item>
+Finch
+                    </item>
+                    <item>
+Bluejay
+                    </item>
+                    <item>
+Robin
+                    </item>
+                    <item>
+Cardinal
+                    </item>
+                    <item>
+Peacock
+                    </item>
+                    <item>
+Finch
+                    </item>
+                    <item>
+Bluejay
+                    </item>
+                    <item>
+Robin
+                    </item>
+                    <item>
+Cardinal
+                    </item>
+                    <item>
+Peacock
+                    </item>
+                    <item>
+Finch
+                    </item>
+                    <item>
+Bluejay
+                    </item>
+                    <item>
+Robin
+                    </item>
+                    <item>
+Cardinal
+                    </item>
+                    <item>
+Peacock
+                    </item>
+                </string-array>
+            </file>
+            <file
+                path="C:\Users\Travis\workspace\BirdBuddy\res\values\strings.xml"
+                qualifiers="" >
+                <string name="action_settings" >Settings
+                </string>
+                <string name="app_name" >BirdBuddy
+                </string>
+                <string name="title_activity_bird_info_view" >BirdInfoViewActivity
+                </string>
+                <string name="hello_world" >Hello world!
+                </string>
+            </file>
+            <file
+                path="C:\Users\Travis\workspace\BirdBuddy\res\values\strings_activity_settings.xml"
+                qualifiers="" >
+                <string-array name="pref_sync_frequency_values" >
+                    <item>
+15
+                    </item>
+                    <item>
+30
+                    </item>
+                    <item>
+60
+                    </item>
+                    <item>
+180
+                    </item>
+                    <item>
+360
+                    </item>
+                    <item>
+-1
+                    </item>
+                </string-array>
+
+                <string name="title_activity_settings" >Settings
+                </string>
+                <string name="pref_ringtone_silent" >Silent
+                </string>
+
+                <string-array name="pref_example_list_values" >
+                    <item>
+1
+                    </item>
+                    <item>
+0
+                    </item>
+                    <item>
+-1
+                    </item>
+                </string-array>
+
+                <string name="pref_title_display_name" >Display name
+                </string>
+                <string name="pref_title_sync_frequency" >Sync frequency
+                </string>
+                <string name="pref_description_social_recommendations" >Recommendations for people to contact based on your message history
+                </string>
+                <string name="pref_header_general" >General
+                </string>
+                <string name="pref_title_add_friends_to_messages" >Add friends to messages
+                </string>
+                <string name="pref_default_display_name" >John Smith
+                </string>
+
+                <string-array name="pref_example_list_titles" >
+                    <item>
+Always
+                    </item>
+                    <item>
+When possible
+                    </item>
+                    <item>
+Never
+                    </item>
+                </string-array>
+
+                <string name="pref_title_new_message_notifications" >New message notifications
+                </string>
+                <string name="pref_title_vibrate" >Vibrate
+                </string>
+                <string name="pref_title_ringtone" >Ringtone
+                </string>
+                <string name="pref_title_social_recommendations" >Enable social recommendations
+                </string>
+
+                <string-array name="pref_sync_frequency_titles" >
+                    <item>
+15 minutes
+                    </item>
+                    <item>
+30 minutes
+                    </item>
+                    <item>
+1 hour
+                    </item>
+                    <item>
+3 hours
+                    </item>
+                    <item>
+6 hours
+                    </item>
+                    <item>
+Never
+                    </item>
+                </string-array>
+
+                <string name="pref_header_notifications" >Notifications
+                </string>
+                <string name="pref_title_system_sync_settings" >System sync settings
+                </string>
+                <string name="pref_header_data_sync" >Data &amp; sync
+                </string>
+            </file>
+            <file
+                path="C:\Users\Travis\workspace\BirdBuddy\res\values\styles.xml"
+                qualifiers="" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+            </file>
+            <file
+                path="C:\Users\Travis\workspace\BirdBuddy\res\values-sw720dp-land\dimens.xml"
+                qualifiers="sw720dp-land" >
+                <dimen name="activity_horizontal_margin" >128dp
+                </dimen>
+            </file>
+            <file
+                path="C:\Users\Travis\workspace\BirdBuddy\res\values-v11\styles.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="C:\Users\Travis\workspace\BirdBuddy\res\values-v14\styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                name="pref_data_sync"
+                path="C:\Users\Travis\workspace\BirdBuddy\res\xml\pref_data_sync.xml"
+                qualifiers=""
+                type="xml" />
+            <file
+                name="pref_general"
+                path="C:\Users\Travis\workspace\BirdBuddy\res\xml\pref_general.xml"
+                qualifiers=""
+                type="xml" />
+            <file
+                name="pref_headers"
+                path="C:\Users\Travis\workspace\BirdBuddy\res\xml\pref_headers.xml"
+                qualifiers=""
+                type="xml" />
+            <file
+                name="pref_notification"
+                path="C:\Users\Travis\workspace\BirdBuddy\res\xml\pref_notification.xml"
+                qualifiers=""
+                type="xml" />
+        </source>
+        <source path="C:\Users\Travis\workspace\BirdBuddy\build\res\rs\debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="C:\Users\Travis\workspace\BirdBuddy\build-types\debug\res" />
+    </dataSet>
+
+</merger>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="birds">
+        <item>Finch</item>
+        <item>Bluejay</item>
+        <item>Robin</item>
+        <item>Cardinal</item>
+        <item>Peacock</item>
+        <item>Finch</item>
+        <item>Bluejay</item>
+        <item>Robin</item>
+        <item>Cardinal</item>
+        <item>Peacock</item>
+        <item>Finch</item>
+        <item>Bluejay</item>
+        <item>Robin</item>
+        <item>Cardinal</item>
+        <item>Peacock</item>
+    </string-array>
+</resources>

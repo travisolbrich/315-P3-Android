@@ -1,0 +1,20 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1384111201071 767 678392391ab2db0e227eed525111b39d7c389e93 C:\Users\Travis\workspace\BirdBuddy\build\res\all\debug\xml\pref_headers.xml
+1384111201081 925 f1b263ca095debc186c97531553bbd59252dc141 C:\Users\Travis\workspace\BirdBuddy\build\res\all\debug\layout\activity_bird_info_view.xml
+1384111201083 298 397fa0b63568a0470c70d51ef096d0e41643dd19 C:\Users\Travis\workspace\BirdBuddy\build\res\all\debug\values-v11\values.xml
+1384111201125 1567 f1b3171827be860a35c993406998491791c71cd7 C:\Users\Travis\workspace\BirdBuddy\build\res\all\debug\drawable-mdpi\ic_launcher.png
+1384111355746 158 32e7ee65fbdc626eb37c290437cc6dd2cc19efc2 C:\Users\Travis\workspace\BirdBuddy\build\res\all\debug\menu\chooser.xml
+1384111201076 1427 91cfa5a5db1c54458151d00ac36948c66b3c5303 C:\Users\Travis\workspace\BirdBuddy\build\res\all\debug\xml\pref_notification.xml
+1384111557848 1319 861b7a096a95ad192efff8b7d2bea627aa19837e C:\Users\Travis\workspace\BirdBuddy\build\res\all\debug\layout\activity_chooser.xml
+1384111201083 1568 31d70f0332c652af644dcb87287b0052c7ac256b C:\Users\Travis\workspace\BirdBuddy\build\res\all\debug\xml\pref_general.xml
+1384111201080 312 8bea783087cb5676de3721f407625bcd074c2d24 C:\Users\Travis\workspace\BirdBuddy\build\res\all\debug\values-v14\values.xml
+1384111355747 165 8f2f61b0e03e69c6012fc64788ec1ae8c5e42c58 C:\Users\Travis\workspace\BirdBuddy\build\res\all\debug\menu\bird_info_view.xml
+1384111201138 7969 435cb5f37ec1cc059d48488a292b021215e4abb3 C:\Users\Travis\workspace\BirdBuddy\build\res\all\debug\drawable-xxhdpi\ic_launcher.png
+1384111201086 227 3f2790df040c35d850e71be71d89b13fda1ca6e6 C:\Users\Travis\workspace\BirdBuddy\build\res\all\debug\values-sw720dp-land\values.xml
+1384111201085 1085 b8d56a1973a9157c895f35f8d3a27fd8eeb12146 C:\Users\Travis\workspace\BirdBuddy\build\res\all\debug\xml\pref_data_sync.xml
+1384111201126 4441 f088eab27a94c3be4384d38710b3c83fee9925bd C:\Users\Travis\workspace\BirdBuddy\build\res\all\debug\drawable-xhdpi\ic_launcher.png
+1384111201128 2620 b2c22e14b0667442e89a2740f8cee7e6aa4e4224 C:\Users\Travis\workspace\BirdBuddy\build\res\all\debug\drawable-hdpi\ic_launcher.png
+1384111201131 412 97893234ac39539d590bebc2a00cddd6079cff62 C:\Users\Travis\workspace\BirdBuddy\build\res\all\debug\layout\list_item.xml
+1384111201077 4029 4fd5379fbccd7937ebc1524e5b509f67c3a74abf C:\Users\Travis\workspace\BirdBuddy\build\res\all\debug\values\values.xml
