@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
@@ -23,9 +26,23 @@ public class BirdInfoViewActivity extends Activity {
 		
 		Intent intent = getIntent();
 		
-		String bird = intent.getStringExtra("bird");
+		final String bird = intent.getStringExtra("bird");
 		
 		textInfo.setText(bird);
+		
+		Button viewMigrations = (Button) findViewById(R.id.viewMigration);
+		
+		viewMigrations.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View view) {
+				// Launch activity
+				Intent intent = new Intent(getApplicationContext(), MigratoryPatternViewActivity.class);
+				intent.putExtra("bird", bird);
+				
+				startActivity(intent);				
+			}
+		});
 	}
 
 	/**
