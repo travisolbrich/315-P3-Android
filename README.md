@@ -1,6 +1,10 @@
 CSCE 315 Project 3: Android Application
 =============
 
+### Build Notes
+
+In order to use the Google Maps API, you must use the [attached keyfile](debug.keystore).
+
 ### Relevant Resources
 
 * [Project Details](http://courses.cs.tamu.edu/choe/13fall/315/proj3.html)
