@@ -1,10 +1,12 @@
 package olbrich.csce315.birdbuddy.test;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import olbrich.csce315.birdbuddy.*;
 import olbrich.csce315.birdbuddy.R;
+
 import com.jayway.android.robotium.solo.Solo;
 
 public class TestChooser extends ActivityInstrumentationTestCase2<Chooser> {
@@ -26,7 +28,7 @@ public class TestChooser extends ActivityInstrumentationTestCase2<Chooser> {
 		assertTrue(birdList.getCount() >= 1);
 	}
 	
-	public void testTappingItemLoadsCorrectInfoScreen() {
+	public void testTappingItemLoadsCorrectInfoScreenAndMap() {
 		ListView birdList = (ListView) solo.getView(R.id.birdList);		
 		TextView birdItem = (TextView) birdList.getChildAt(0);		
 		String birdName = birdItem.getText().toString();
@@ -40,5 +42,9 @@ public class TestChooser extends ActivityInstrumentationTestCase2<Chooser> {
 		// Make sure the bird info is on the page
 		// TODO: Use something more robust to make sure we're actually on the right page
 		assertTrue(solo.waitForText(birdName));
+		
+		// Make sure we get to the map page
+		solo.clickOnButton("View Migration Patterns");
+		solo.assertCurrentActivity("Failed", MigratoryPatternViewActivity.class);
 	}
 }
