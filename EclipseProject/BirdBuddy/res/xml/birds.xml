@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<birds>
+	<bird
+	    id="0"
+	    favorite="true"
+	    name="warbler"
+	    description="Text goes here">
+	    
+	    <migration>
+			<winter>
+				<point
+					lat="12"
+					long="12" />
+				<point
+					lat="12"
+					long="12" />
+				<point
+					lat="12"
+					long="12" />
+			</winter>
+			<spring>
+				<point
+					lat="12"
+					long="12" />
+				<point
+					lat="12"
+					long="12" />
+				<point
+					lat="12"
+					long="12" />
+			</spring>
+			<summer>
+				<point
+					lat="12"
+					long="12" />
+				<point
+					lat="12"
+					long="12" />
+				<point
+					lat="12"
+					long="12" />
+			</summer>
+			<fall>
+				<point
+					lat="12"
+					long="12" />
+				<point
+					lat="12"
+					long="12" />
+				<point
+					lat="12"
+					long="12" />
+			</fall>
+		</migration>		
+	</bird>
+</birds>
