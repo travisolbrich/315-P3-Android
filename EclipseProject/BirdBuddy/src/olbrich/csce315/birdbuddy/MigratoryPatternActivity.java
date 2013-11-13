@@ -14,6 +14,7 @@ import com.google.android.gms.maps.model.LatLngCreator;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,12 +24,12 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
-public class MigratoryPatternViewActivity extends FragmentActivity {
+public class MigratoryPatternActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_migratory_pattern_view);
+        setContentView(R.layout.activity_migratory_pattern);
         
         Button resetMap = (Button) findViewById(R.id.map_reset);
         

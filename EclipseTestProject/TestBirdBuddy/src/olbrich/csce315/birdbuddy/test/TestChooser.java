@@ -9,11 +9,11 @@ import olbrich.csce315.birdbuddy.R;
 
 import com.jayway.android.robotium.solo.Solo;
 
-public class TestChooser extends ActivityInstrumentationTestCase2<Chooser> {
+public class TestChooser extends ActivityInstrumentationTestCase2<ChooserActivity> {
 	
 	private Solo solo;
 	public TestChooser() {
-		super(Chooser.class);
+		super(ChooserActivity.class);
 	}
 	
 	@Override
@@ -37,7 +37,7 @@ public class TestChooser extends ActivityInstrumentationTestCase2<Chooser> {
 		solo.clickInList(0);
 		
 		// Make sure that we're passed to the BirdInfoViewActivity
-		solo.assertCurrentActivity("test", BirdInfoViewActivity.class);
+		solo.assertCurrentActivity("test", InfoActivity.class);
 		
 		// Make sure the bird info is on the page
 		// TODO: Use something more robust to make sure we're actually on the right page
@@ -45,6 +45,6 @@ public class TestChooser extends ActivityInstrumentationTestCase2<Chooser> {
 		
 		// Make sure we get to the map page
 		solo.clickOnButton("View Migration Patterns");
-		solo.assertCurrentActivity("Failed", MigratoryPatternViewActivity.class);
+		solo.assertCurrentActivity("Failed", MigratoryPatternActivity.class);
 	}
 }

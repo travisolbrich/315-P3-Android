@@ -13,12 +13,12 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
 
-public class BirdInfoViewActivity extends Activity {
+public class InfoActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_bird_info_view);
+		setContentView(R.layout.activity_info);
 		// Show the Up button in the action bar.
 		setupActionBar();
 		
@@ -37,7 +37,7 @@ public class BirdInfoViewActivity extends Activity {
 			@Override
 			public void onClick(View view) {
 				// Launch activity
-				Intent intent = new Intent(getApplicationContext(), MigratoryPatternViewActivity.class);
+				Intent intent = new Intent(getApplicationContext(), MigratoryPatternActivity.class);
 				intent.putExtra("bird", bird);
 				
 				startActivity(intent);				

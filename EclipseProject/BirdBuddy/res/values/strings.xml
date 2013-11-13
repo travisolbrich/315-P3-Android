@@ -7,5 +7,10 @@
     <string name="title_activity_bird_info_view">BirdInfoViewActivity</string>
     <string name="birdSelectorInfo">Select a bird from the list below to view more information!</string>
     <string name="title_activity_migratory_pattern_view">MigratoryPatternViewActivity</string>
+    <string name="title_activity_info">InfoActivity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="title_activity_image_fragment">ImageFragment</string>
 
 </resources>

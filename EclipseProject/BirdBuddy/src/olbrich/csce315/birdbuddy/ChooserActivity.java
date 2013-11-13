@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class Chooser extends Activity {
+public class ChooserActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class Chooser extends Activity {
 	
 	ListView listView = (ListView) findViewById(R.id.birdList);
 	
-	listView.setAdapter(new ArrayAdapter<String>(this, R.layout.list_item, R.id.label, birds));
+	listView.setAdapter(new ArrayAdapter<String>(this, R.layout.bird_list_item, R.id.label, birds));
 	
 	listView.setOnItemClickListener(new OnItemClickListener() {
 
@@ -34,7 +34,7 @@ public class Chooser extends Activity {
 			String bird = ((TextView) view).getText().toString();
 			
 			// Launch activity
-			Intent intent = new Intent(getApplicationContext(), BirdInfoViewActivity.class);
+			Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
 			intent.putExtra("bird", bird);
 			
 			startActivity(intent);
