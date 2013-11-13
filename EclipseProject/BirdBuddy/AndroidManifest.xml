@@ -42,10 +42,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="olbrich.csce315.birdbuddy.Chooser" />
         </activity>
-        <activity
-            android:name="olbrich.csce315.birdbuddy.SettingsActivity"
-            android:label="@string/title_activity_settings" >
-        </activity>
+        
         <activity
             android:name="olbrich.csce315.birdbuddy.MigratoryPatternActivity"
             android:label="@string/title_activity_migratory_pattern_view"
@@ -58,22 +55,9 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="4030500" />
+        
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyA0rJei4_JJG1c_HuH0xaJQZF08yHQ77-g" />
-
-        <activity
-            android:name="olbrich.csce315.birdbuddy.InfoActivity"
-            android:label="@string/title_activity_info"
-            android:parentActivityName="olbrich.csce315.birdbuddy.ChooserActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="olbrich.csce315.birdbuddy.Chooser" />
-        </activity>
-        <activity
-            android:name="olbrich.csce315.birdbuddy.infoFragments.ImageFragment"
-            android:label="@string/title_activity_image_fragment" >
-        </activity>
     </application>
-
 </manifest>
