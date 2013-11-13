@@ -1,8 +1,21 @@
-package olbrich.csce315.birdbuddy;
+package olbrich.csce315.birdbuddy.activities;
 
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+
+import olbrich.csce315.birdbuddy.R;
+import org.xmappr.Xmappr;
+import olbrich.csce315.birdbuddy.R.array;
+import olbrich.csce315.birdbuddy.R.id;
+import olbrich.csce315.birdbuddy.R.layout;
+import olbrich.csce315.birdbuddy.R.menu;
+import olbrich.csce315.birdbuddy.models.Bird;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
+import android.util.Xml;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;

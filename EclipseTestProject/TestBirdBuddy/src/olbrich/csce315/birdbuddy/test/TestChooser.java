@@ -6,6 +6,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import olbrich.csce315.birdbuddy.*;
 import olbrich.csce315.birdbuddy.R;
+import olbrich.csce315.birdbuddy.activities.ChooserActivity;
 
 import com.jayway.android.robotium.solo.Solo;
 

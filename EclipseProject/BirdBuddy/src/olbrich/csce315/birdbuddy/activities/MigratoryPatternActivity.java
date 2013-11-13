@@ -1,4 +1,8 @@
-package olbrich.csce315.birdbuddy;
+package olbrich.csce315.birdbuddy.activities;
+
+import olbrich.csce315.birdbuddy.R;
+import olbrich.csce315.birdbuddy.R.id;
+import olbrich.csce315.birdbuddy.R.layout;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
