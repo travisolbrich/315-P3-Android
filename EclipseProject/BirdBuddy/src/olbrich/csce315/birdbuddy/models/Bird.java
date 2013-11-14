@@ -11,14 +11,61 @@ import java.util.List;
  * Represents a bird
  */
 public class Bird {
-	public int id;
+
+    private Long identifier;
 	
-	public boolean favorite;
+	private boolean favorite;
 	
-	public String name;
+	private String name;
 	
-	public String description;
+	private String description;
 	
-	public List<Season> season;	
-	
+	private List<Season> season;
+
+    public Bird() {}
+
+    public Bird(Long identifier) {
+        this.identifier = identifier;
+    }
+
+    public Long getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(Long identifier) {
+        this.identifier = identifier;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean isFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public List<Season> getSeason() {
+        return season;
+    }
+
+    public void setSeason(List<Season> season) {
+        this.season = season;
+    }
+
 }
