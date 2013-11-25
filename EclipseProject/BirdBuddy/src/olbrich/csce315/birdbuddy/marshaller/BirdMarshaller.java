@@ -17,14 +17,17 @@ public class BirdMarshaller extends DefaultHandler {
 	private static final String MIGRATION_NAME = "migration";
 	private static final String POINT_NAME = "point";
 	private static final String BIRD_NAME = "bird";
-	
-	
+
+	private Bird bird = null;
 	private List<Bird> birds = new ArrayList<Bird>();
+
+	private Season season = null;
 	private List<Season> migration = new ArrayList<Season>();
 	
-	private Season season = null;
+	private Point point = null;
 	private List<Point> points = new ArrayList<Point>();
-	
+
+	boolean mType = false;
 	boolean sType = false;
 	boolean pType = false;
 
@@ -35,7 +38,7 @@ public class BirdMarshaller extends DefaultHandler {
 	        if (qName.equalsIgnoreCase(BIRD_NAME)) {
 	            
 	        	String idString = attributes.getValue("id");
-	        	Long identifier = new Long(idString);
+	        	Long identifier = Long.valueOf(idString);
 	        	
 	        	String name = attributes.getValue("name");
 	        	String description = attributes.getValue("description");
@@ -44,46 +47,50 @@ public class BirdMarshaller extends DefaultHandler {
 	            bird.setName(name);
 	            bird.setDescription(description);
 	            
-	            birds.add
-	            
-	        } else if (qName.equalsIgnoreCase("name")) {
-	            //set boolean values for fields, will be used in setting Employee variables
-	            bName = true;
-	        } else if (qName.equalsIgnoreCase("age")) {
-	            bAge = true;
-	        } else if (qName.equalsIgnoreCase("gender")) {
-	            bGender = true;
-	        } else if (qName.equalsIgnoreCase("role")) {
-	            bRole = true;
+	            this.bird = bird;
+	        } else if (qName.equalsIgnoreCase(SEASON_NAME)) {
+	        	String seasonName = attributes.getValue("name");
+				this.season = new Season(seasonName);
+				this.points = new ArrayList<Point>();
+	        } else if (qName.equalsIgnoreCase(MIGRATION_NAME)) {
+	        	this.migration = new ArrayList<Season>();
+	        } else if (qName.equalsIgnoreCase(POINT_NAME)) {
+
+	        	String latString = attributes.getValue("lat");
+	        	String longString = attributes.getValue("long");
+
+	        	Double latitude = Double.valueOf(latString);
+	        	Double longitude = Double.valueOf(longString);
+	        	
+	            this.point = new Point(latitude, longitude);
 	        }
 	    }
 
 	@Override
 	public void endElement(String uri, String localName, String qName)
 			throws SAXException {
-		if (qName.equalsIgnoreCase("Employee")) {
-			// add Employee object to list
-			empList.add(emp);
-		} else if (qName.equalsIgnoreCase(""))
+		if (qName.equalsIgnoreCase(BIRD_NAME)) {
+            birds.add(this.bird);
+            this.bird = null;
+		} else if (qName.equalsIgnoreCase(SEASON_NAME)) {
+			
+			this.season.setPoints(this.points);
+			migration.add(this.season);
+			
+			this.season = null;
+			this.points = null;
+		} else if (qName.equals(MIGRATION_NAME)) {
+			this.bird.setMigrations(this.migration);
+			this.migration = null;
+		} else if (qName.equals(POINT_NAME)) {
+			this.points.add(this.point);
+			this.point = null;
+		}
 	}
 
 	@Override
 	public void characters(char ch[], int start, int length)
 			throws SAXException {
 
-		if (bAge) {
-			// age element, set Employee age
-			emp.setAge(Integer.parseInt(new String(ch, start, length)));
-			bAge = false;
-		} else if (bName) {
-			emp.setName(new String(ch, start, length));
-			bName = false;
-		} else if (bRole) {
-			emp.setRole(new String(ch, start, length));
-			bRole = false;
-		} else if (bGender) {
-			emp.setGender(new String(ch, start, length));
-			bGender = false;
-		}
 	}
 }

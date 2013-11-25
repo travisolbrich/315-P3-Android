@@ -7,7 +7,10 @@ public class Point {
 	
 	private Double longitude;
 
-    public Point(Double latitude, Double longitude) {};
+    public Point(Double latitude, Double longitude) {
+    	this.latitude = latitude;
+    	this.longitude = longitude;
+    };
 
     public Double getLatitude() {
         return latitude;

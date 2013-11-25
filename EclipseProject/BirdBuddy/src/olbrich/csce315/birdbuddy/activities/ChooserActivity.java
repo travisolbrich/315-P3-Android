@@ -5,7 +5,6 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 
 import olbrich.csce315.birdbuddy.R;
-import org.xmappr.Xmappr;
 import olbrich.csce315.birdbuddy.R.array;
 import olbrich.csce315.birdbuddy.R.id;
 import olbrich.csce315.birdbuddy.R.layout;
