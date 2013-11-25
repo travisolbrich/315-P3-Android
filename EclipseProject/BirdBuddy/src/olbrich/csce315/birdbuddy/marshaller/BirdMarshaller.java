@@ -1,7 +1,13 @@
 package olbrich.csce315.birdbuddy.marshaller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 
 import olbrich.csce315.birdbuddy.models.Bird;
 import olbrich.csce315.birdbuddy.models.Point;
@@ -30,6 +36,10 @@ public class BirdMarshaller extends DefaultHandler {
 	boolean mType = false;
 	boolean sType = false;
 	boolean pType = false;
+
+	public List<Bird> getBirds() {
+		return birds;
+	}
 
 	@Override
 	    public void startElement(String uri, String localName, String qName, Attributes attributes)
@@ -92,5 +102,28 @@ public class BirdMarshaller extends DefaultHandler {
 	public void characters(char ch[], int start, int length)
 			throws SAXException {
 
+	}
+
+	public static List<Bird> parserBirdsFromFile(String filepath) {
+		List<Bird> birds = null;
+		SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+	    
+		try {
+	        SAXParser saxParser = saxParserFactory.newSAXParser();
+	        BirdMarshaller marshaller = new BirdMarshaller();
+	        File file = new File(filepath);
+	        saxParser.parse(file, marshaller);
+	        
+	        birds = marshaller.getBirds();
+	        
+	    } catch (ParserConfigurationException e) {
+	        e.printStackTrace();
+	    } catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return birds;
 	}
 }
