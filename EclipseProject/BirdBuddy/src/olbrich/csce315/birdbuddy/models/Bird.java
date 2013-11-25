@@ -20,7 +20,7 @@ public class Bird {
 	
 	private String description;
 	
-	private List<Season> season;
+	private List<CalendarSeason> season;
 
     public Bird() {}
 
@@ -60,11 +60,11 @@ public class Bird {
         this.description = description;
     }
 
-    public List<Season> getSeason() {
+    public List<CalendarSeason> getSeason() {
         return season;
     }
 
-    public void setSeason(List<Season> season) {
+    public void setSeason(List<CalendarSeason> season) {
         this.season = season;
     }
 

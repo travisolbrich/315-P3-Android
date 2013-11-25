@@ -27,3 +27,14 @@ proguard/
 *.ipr
 *.iws
 .idea/
+
+google-play-services_lib/*
+EclipseProject/BirdBuddy/project.properties
+
+EclipseProject/BirdBuddy/build/manifests/debug/project.properties
+
+EclipseProject/BirdBuddy/build/manifests/debug/.settings/org.eclipse.jdt.core.prefs
+
+EclipseProject/BirdBuddy/project.properties
+
+EclipseProject/BirdBuddy/libs/gson-2.2.4.jar
