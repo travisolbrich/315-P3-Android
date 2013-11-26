@@ -23,7 +23,7 @@
 	    android:id="@+id/seekBar1"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
-	    android:max="4000"
+	    android:max="3995"
 	    android:layout_weight="0" />
 	
 	<TextView

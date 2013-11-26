@@ -33,7 +33,7 @@
         android:src="@drawable/robin" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/imageView1"
@@ -45,7 +45,7 @@
         android:id="@+id/viewMigration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView1"
+        android:layout_below="@id/description"
         android:layout_centerHorizontal="true"
         android:text="View Migration Patterns"
         android:layout_marginTop="26dp" />

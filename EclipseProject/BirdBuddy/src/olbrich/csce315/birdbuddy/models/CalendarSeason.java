@@ -2,7 +2,6 @@ package olbrich.csce315.birdbuddy.models;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 /**
  *
