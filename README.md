@@ -22,3 +22,7 @@ Please view screenshots of the application in our [Picasa web album](https://pic
 ### Development Log
 
 Please see the [Commit Log](https://github.com/travisolbrich/315-P3-Android/commits/master) for the most up-to-date and detailed development log. The below log will summarize major developments.
+
+
+### Progress Report 11/10/2013
+We created unit tests for our bird data marshaller, which greatly reduced time spent in the application. We created additional tests for our models, which led us to discover a bug in the Point class’s constructor. We have additional android unit tests for automatic testing of the user interface.
