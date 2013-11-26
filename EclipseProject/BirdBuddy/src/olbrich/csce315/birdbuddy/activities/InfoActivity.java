@@ -25,10 +25,10 @@ public class InfoActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_info);
-		// Show the Up button in the action bar.
 		setupActionBar();
 		
 		TextView textInfo = (TextView) findViewById(R.id.bird_label);
+		TextView textDescription = (TextView) findViewById(R.id.description);
 		
 		Intent intent = getIntent();
 		
@@ -40,6 +40,7 @@ public class InfoActivity extends Activity {
 	    Bird bird = birds.get(birdID);
 				
 		textInfo.setText(bird.getName());
+		textDescription.setText(bird.getDescription());
 		
 		Button viewMigrations = (Button) findViewById(R.id.viewMigration);
 		
