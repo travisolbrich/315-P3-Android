@@ -1,6 +1,11 @@
 package olbrich.csce315.birdbuddy.activities;
 
+import java.io.InputStream;
+import java.util.List;
+
 import olbrich.csce315.birdbuddy.R;
+import olbrich.csce315.birdbuddy.marshaller.BirdMarshaller;
+import olbrich.csce315.birdbuddy.models.Bird;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -27,9 +32,14 @@ public class InfoActivity extends Activity {
 		
 		Intent intent = getIntent();
 		
-		final String bird = intent.getStringExtra("bird");
+		final int birdID = intent.getIntExtra("birdID", 0);
 		
-		textInfo.setText(bird);
+		InputStream file = getResources().openRawResource(R.raw.birds);
+	    List<Bird> birds = BirdMarshaller.parseBirdsFromInputStream(file);
+		
+	    Bird bird = birds.get(birdID);
+				
+		textInfo.setText(bird.getName());
 		
 		Button viewMigrations = (Button) findViewById(R.id.viewMigration);
 		
@@ -39,7 +49,7 @@ public class InfoActivity extends Activity {
 			public void onClick(View view) {
 				// Launch activity
 				Intent intent = new Intent(getApplicationContext(), MigratoryPatternActivity.class);
-				intent.putExtra("bird", bird);
+				intent.putExtra("birdID", birdID);
 				
 				startActivity(intent);				
 			}

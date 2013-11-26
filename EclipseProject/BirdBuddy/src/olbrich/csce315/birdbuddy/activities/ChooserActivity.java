@@ -1,6 +1,12 @@
 package olbrich.csce315.birdbuddy.activities;
 
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
 import olbrich.csce315.birdbuddy.R;
+import olbrich.csce315.birdbuddy.marshaller.BirdMarshaller;
+import olbrich.csce315.birdbuddy.models.Bird;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -19,11 +25,19 @@ public class ChooserActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_chooser);
 		
-	String [] birds = getResources().getStringArray(R.array.birds);
+	InputStream file = getResources().openRawResource(R.raw.birds);
+    List<Bird> birds = BirdMarshaller.parseBirdsFromInputStream(file);
 	
+    List<String> birdNames = new ArrayList<String>();
+    
+    for(Bird bird : birds)
+    {
+    	birdNames.add(bird.getName());
+    }
+    
 	ListView listView = (ListView) findViewById(R.id.birdList);
 	
-	listView.setAdapter(new ArrayAdapter<String>(this, R.layout.bird_list_item, R.id.label, birds));
+	listView.setAdapter(new ArrayAdapter<String>(this, R.layout.bird_list_item, R.id.label, birdNames));
 	
 	listView.setOnItemClickListener(new OnItemClickListener() {
 
@@ -31,12 +45,9 @@ public class ChooserActivity extends Activity {
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
 			
-			// Selected bird
-			String bird = ((TextView) view).getText().toString();
-			
 			// Launch activity
 			Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
-			intent.putExtra("bird", bird);
+			intent.putExtra("birdID", id);
 			
 			startActivity(intent);
 		}

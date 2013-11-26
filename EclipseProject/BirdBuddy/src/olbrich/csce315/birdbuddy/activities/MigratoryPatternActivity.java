@@ -14,8 +14,11 @@ import com.google.android.gms.maps.GoogleMap.OnCameraChangeListener;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolygonOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
@@ -34,7 +37,7 @@ public class MigratoryPatternActivity extends FragmentActivity {
         
         Button resetMap = (Button) findViewById(R.id.map_reset);
         
-        final GoogleMap map = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.the_map)).getMap();
+		final GoogleMap map = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.the_map)).getMap();
         
         final SeekBar seeker = (SeekBar) findViewById(R.id.seekBar1);
         final TextView location = (TextView) findViewById(R.id.cur_pos);
@@ -46,7 +49,7 @@ public class MigratoryPatternActivity extends FragmentActivity {
         // Get the birds
         
         
-        InputStream file = getResources().openRawResource(R.raw.birds);
+        
         
         /*
         Scanner scanner = new Scanner(file);
@@ -55,19 +58,21 @@ public class MigratoryPatternActivity extends FragmentActivity {
         	System.out.println(scanner.nextLine());
         }
         */
-        
+        InputStream file = getResources().openRawResource(R.raw.birds);
         List<Bird> birds = BirdMarshaller.parseBirdsFromInputStream(file);
         
-        for(Bird bird : birds)
-        {
-        	Season season = bird.getMigrations().get(0);
-        	
-        	for(Point point : season.getPoints())
-        	{
-        		birdPolygonOptions.add(new LatLng(point.getLatitude(), point.getLongitude()));
-        	}
-        }
-        
+        Intent intent = getIntent();		
+		final int birdID = intent.getIntExtra("birdID", 0);
+		
+		Bird bird = birds.get(birdID);
+                
+    	Season season = bird.getMigrations().get(0);
+    	
+    	for(Point point : season.getPoints())
+    	{
+    		birdPolygonOptions.add(new LatLng(point.getLatitude(), point.getLongitude()));
+    	}
+                
         map.addPolygon(birdPolygonOptions);
         
 	    seeker.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
