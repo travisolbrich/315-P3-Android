@@ -9,14 +9,17 @@
 	    <migration>
 			<season name="winter">
 				<point
-					lat="12"
-					long="12" />
+					lat="1"
+					long="2" />
 				<point
 					lat="12"
 					long="12" />
 				<point
-					lat="12"
-					long="12" />
+					lat="22"
+					long="22" />
+				<point
+					lat="1"
+					long="2" />
 			</season>
 			<season name="spring">
 				<point

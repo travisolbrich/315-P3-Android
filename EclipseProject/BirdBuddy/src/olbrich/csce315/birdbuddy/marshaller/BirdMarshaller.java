@@ -2,6 +2,7 @@ package olbrich.csce315.birdbuddy.marshaller;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,7 +105,7 @@ public class BirdMarshaller extends DefaultHandler {
 
 	}
 
-	public static List<Bird> parserBirdsFromFile(String filepath) {
+	public static List<Bird> parseBirdsFromFile(String filepath) {
 		List<Bird> birds = null;
 		SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
 	    
@@ -113,6 +114,28 @@ public class BirdMarshaller extends DefaultHandler {
 	        BirdMarshaller marshaller = new BirdMarshaller();
 	        File file = new File(filepath);
 	        saxParser.parse(file, marshaller);
+	        
+	        birds = marshaller.getBirds();
+	        
+	    } catch (ParserConfigurationException e) {
+	        e.printStackTrace();
+	    } catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return birds;
+	}
+	
+	public static List<Bird> parseBirdsFromInputStream(InputStream stream) {
+		List<Bird> birds = null;
+		SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+	    
+		try {
+	        SAXParser saxParser = saxParserFactory.newSAXParser();
+	        BirdMarshaller marshaller = new BirdMarshaller();
+	        saxParser.parse(stream, marshaller);
 	        
 	        birds = marshaller.getBirds();
 	        

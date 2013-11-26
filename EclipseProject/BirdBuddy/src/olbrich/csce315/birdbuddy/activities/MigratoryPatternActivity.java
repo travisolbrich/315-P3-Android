@@ -1,8 +1,18 @@
 package olbrich.csce315.birdbuddy.activities;
 
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+import java.util.Scanner;
+
 import olbrich.csce315.birdbuddy.R;
 import olbrich.csce315.birdbuddy.R.id;
 import olbrich.csce315.birdbuddy.R.layout;
+import olbrich.csce315.birdbuddy.marshaller.BirdMarshaller;
+import olbrich.csce315.birdbuddy.models.Bird;
+import olbrich.csce315.birdbuddy.models.Point;
+import olbrich.csce315.birdbuddy.models.Season;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -14,9 +24,12 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.CameraPositionCreator;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngCreator;
+import com.google.android.gms.maps.model.PolygonOptions;
 
 import android.app.Activity;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.DragEvent;
@@ -41,6 +54,37 @@ public class MigratoryPatternActivity extends FragmentActivity {
         
         final SeekBar seeker = (SeekBar) findViewById(R.id.seekBar1);
         final TextView location = (TextView) findViewById(R.id.cur_pos);
+        
+        // Polygon
+        PolygonOptions birdPolygonOptions = new PolygonOptions();
+        birdPolygonOptions.strokeColor(0x7F00FF00);
+        
+        // Get the birds
+        
+        
+        InputStream file = getResources().openRawResource(R.raw.birds);
+        
+        /*
+        Scanner scanner = new Scanner(file);
+        
+        while(scanner.hasNext()) {
+        	System.out.println(scanner.nextLine());
+        }
+        */
+        
+        List<Bird> birds = BirdMarshaller.parseBirdsFromInputStream(file);
+        
+        for(Bird bird : birds)
+        {
+        	Season season = bird.getMigrations().get(0);
+        	
+        	for(Point point : season.getPoints())
+        	{
+        		birdPolygonOptions.add(new LatLng(point.getLatitude(), point.getLongitude()));
+        	}
+        }
+        
+        map.addPolygon(birdPolygonOptions);
         
 	    seeker.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 			
