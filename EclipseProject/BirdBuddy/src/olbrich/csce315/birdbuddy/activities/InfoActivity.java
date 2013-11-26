@@ -1,9 +1,6 @@
 package olbrich.csce315.birdbuddy.activities;
 
 import olbrich.csce315.birdbuddy.R;
-import olbrich.csce315.birdbuddy.R.id;
-import olbrich.csce315.birdbuddy.R.layout;
-import olbrich.csce315.birdbuddy.R.menu;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;

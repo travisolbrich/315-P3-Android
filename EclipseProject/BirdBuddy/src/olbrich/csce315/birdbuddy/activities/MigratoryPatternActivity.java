@@ -1,41 +1,25 @@
 package olbrich.csce315.birdbuddy.activities;
 
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
-import java.util.Scanner;
-
 import olbrich.csce315.birdbuddy.R;
-import olbrich.csce315.birdbuddy.R.id;
-import olbrich.csce315.birdbuddy.R.layout;
 import olbrich.csce315.birdbuddy.marshaller.BirdMarshaller;
 import olbrich.csce315.birdbuddy.models.Bird;
 import olbrich.csce315.birdbuddy.models.Point;
 import olbrich.csce315.birdbuddy.models.Season;
 
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnCameraChangeListener;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.CameraPositionCreator;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.LatLngCreator;
 import com.google.android.gms.maps.model.PolygonOptions;
 
-import android.app.Activity;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
-import android.view.DragEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnDragListener;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
