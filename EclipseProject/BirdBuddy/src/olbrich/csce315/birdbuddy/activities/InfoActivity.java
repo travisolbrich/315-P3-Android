@@ -1,7 +1,9 @@
 package olbrich.csce315.birdbuddy.activities;
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import olbrich.csce315.birdbuddy.R;
 import olbrich.csce315.birdbuddy.marshaller.BirdMarshaller;
@@ -13,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
@@ -34,10 +37,16 @@ public class InfoActivity extends Activity {
 		
 		final int birdID = intent.getIntExtra("birdID", 0);
 		
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("Peregrine Falcon", R.drawable.peregine);
+		
 		InputStream file = getResources().openRawResource(R.raw.birds);
 	    List<Bird> birds = BirdMarshaller.parseBirdsFromInputStream(file);
 		
 	    Bird bird = birds.get(birdID);
+	    
+	    ImageView image = (ImageView) findViewById(R.id.imageView1);
+		image.setImageResource(map.get(bird.getName()));
 				
 		textInfo.setText(bird.getName());
 		textDescription.setText(bird.getDescription());
