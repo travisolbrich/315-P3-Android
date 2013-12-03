@@ -34,11 +34,13 @@ public class InfoActivity extends Activity {
 		TextView textDescription = (TextView) findViewById(R.id.description);
 		
 		Intent intent = getIntent();
-		
-		final int birdID = intent.getIntExtra("birdID", 0);
-		
+		final int birdID = intent.getExtras().getInt("birdID");
+
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		map.put("Peregrine Falcon", R.drawable.peregine);
+		map.put("Snowy Egret", R.drawable.egret);
+		map.put("Canadian Goose", R.drawable.goose);
+		map.put("Hooded Warbler", R.drawable.hooded);
 		
 		InputStream file = getResources().openRawResource(R.raw.birds);
 	    List<Bird> birds = BirdMarshaller.parseBirdsFromInputStream(file);
@@ -59,8 +61,8 @@ public class InfoActivity extends Activity {
 			public void onClick(View view) {
 				// Launch activity
 				Intent intent = new Intent(getApplicationContext(), MigratoryPatternActivity.class);
-				intent.putExtra("birdID", birdID);
-				
+				intent.putExtra("birdID", (int)birdID);
+				System.out.println("birdID set as " + birdID);
 				startActivity(intent);				
 			}
 		});

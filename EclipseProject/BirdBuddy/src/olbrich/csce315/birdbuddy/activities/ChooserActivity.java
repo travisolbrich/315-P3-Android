@@ -47,8 +47,7 @@ public class ChooserActivity extends Activity {
 			
 			// Launch activity
 			Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
-			intent.putExtra("birdID", id);
-			
+			intent.putExtra("birdID", (int)id);
 			startActivity(intent);
 		}
 		

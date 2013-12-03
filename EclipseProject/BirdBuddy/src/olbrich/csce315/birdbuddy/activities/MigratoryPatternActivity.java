@@ -2,15 +2,20 @@ package olbrich.csce315.birdbuddy.activities;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import olbrich.csce315.birdbuddy.R;
 import olbrich.csce315.birdbuddy.marshaller.BirdMarshaller;
 import olbrich.csce315.birdbuddy.models.Bird;
 import olbrich.csce315.birdbuddy.models.Point;
 import olbrich.csce315.birdbuddy.models.Season;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.CancelableCallback;
 import com.google.android.gms.maps.GoogleMap.OnCameraChangeListener;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
@@ -40,7 +45,7 @@ public class MigratoryPatternActivity extends FragmentActivity {
         final Button resetMap = (Button) findViewById(R.id.map_reset);
 		final GoogleMap map = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.the_map)).getMap();        
         final SeekBar seeker = (SeekBar) findViewById(R.id.seekBar1);
-        final TextView location = (TextView) findViewById(R.id.cur_pos);
+        final TextView seasonNameDisplay = (TextView) findViewById(R.id.cur_pos);
         
         // Set map view
         map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
@@ -49,7 +54,7 @@ public class MigratoryPatternActivity extends FragmentActivity {
         InputStream file = getResources().openRawResource(R.raw.birds);
         List<Bird> birds = BirdMarshaller.parseBirdsFromInputStream(file);
         		
-		final int birdID = getIntent().getIntExtra("birdID", 0);		
+		final int birdID = getIntent().getExtras().getInt("birdID");		
 		Bird bird = birds.get(birdID);
 		
 		// Get the seasons
@@ -88,21 +93,51 @@ public class MigratoryPatternActivity extends FragmentActivity {
     		polygons.add(map.addPolygon(birdPolygonOptions));
     	}
     	
-    	// Determine if we have a "all year" to plot
-    	boolean hasAllYear = (seasons.get(0).getName().compareTo("All Year") == 0);              
+    	// Combine seasons into a map so we can show multiple  polygons per season (this is hacky)
+    	final List<ArrayList<Integer>> seasonPolygons = new ArrayList<ArrayList<Integer>>();
+    	final List<String> seasonNames = new ArrayList<String>();
     	
-    	if(hasAllYear) polygons.get(0).setVisible(true);
-    	
-    	final int startingSeason = hasAllYear ? 1 : 0;
-    	
-    	String notice = "";
-        
-        if(hasAllYear) notice += "Areas the bird is in all year is shown in green. ";
+    	for(int i=0; i < seasons.size(); i++)
+    	{
+    		// Add the season if it doesn't exist
+    		if( ! seasonNames.contains(seasons.get(i).getName()))
+    		{
+    			seasonNames.add(seasons.get(i).getName());
+    			seasonPolygons.add(new ArrayList<Integer>());
+    		}
+    		
+    		// Add the index
+    		int seasonID = seasonNames.indexOf(seasons.get(i).getName());
+    		seasonPolygons.get(seasonID).add(i);
+    		
+    		System.out.println("For " + seasonNames.get(seasonID) + ", we have " + seasonPolygons.get(seasonID).toString());
+    	}
+    	    	
+    	String notice = "";        
+        notice += "Areas the bird is in all year is shown in green. ";
         notice += "Use the slider to change seasons. The current season is shown in red.";
         
         resetMap.setText(notice);
         
-        polygons.get(startingSeason).setVisible(true);
+        // Set the all year polygons visible
+        for(int id : seasonPolygons.get(0))
+        {
+        	polygons.get(id).setVisible(true);
+        }
+        
+        // Set the next season's polygon visible
+        final int startingSeason = 1;
+        
+        // Make the next season's polygons visible
+        for(int id : seasonPolygons.get(1))
+        {
+        	polygons.get(id).setVisible(true);
+        }
+        
+        seasonNameDisplay.setText(seasonNames.get(1));
+        
+        // Set starting map position
+        map.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(37, -100)));
     	
     	// Listen for season changes        
 	    seeker.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
@@ -121,14 +156,14 @@ public class MigratoryPatternActivity extends FragmentActivity {
 					boolean fromUser) {			
 				
 				// Divide 4000 into the right number of seasons
-				int numChoosableSeasons = seasons.size() - startingSeason;
+				int numChoosableSeasons = seasonNames.size() - startingSeason;
 				int divisionSize = 4000 / (numChoosableSeasons);
 				
 				int seasonID =(int) Math.ceil((progress) / divisionSize) + startingSeason;
 				
 				//location.setText(" " + divisionSize + " " + progress + " " + seasonID);
 				
-				location.setText(" " + seasons.get(seasonID).getName());
+				seasonNameDisplay.setText(" " + seasonNames.get(seasonID));
 				
 				// Blank out the other seasons
 				for (int i=startingSeason; i < seasons.size(); i++)
@@ -137,7 +172,10 @@ public class MigratoryPatternActivity extends FragmentActivity {
 				}
 				
 				// Make this season visible
-				polygons.get(seasonID).setVisible(true);
+				for(int id : seasonPolygons.get(seasonID))
+		        {
+		        	polygons.get(id).setVisible(true);
+		        }
 			}
 		});
     }
