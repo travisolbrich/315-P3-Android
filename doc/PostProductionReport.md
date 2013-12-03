@@ -34,3 +34,10 @@ A difficulty at first was learning the Android SDK. As none of the team had expe
 ## Refactoring
 
 One area involving refactoring was the support of multiple data sets as opposed to the initial set-up of only one. Along with this was the need to limit the amount of data being considered to only the perimeter of the polygons. At first, all of the points within the polygon were being mounted to the map. This required far too much processing. Once the data was limited, the transitions were smooth and rapid.
+
+## Work Load Distribution
+
+* Derek: 25%
+* John: 25%
+* Shane: 25%
+* Travis: 25%
